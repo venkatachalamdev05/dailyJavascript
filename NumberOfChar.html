@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let input = "aabbcdddce";
+    let map = {}
+    for (item of input) {
+        if (map[item]) {
+            map[item] += 1
+        } else {
+            map[item] = 1
+        }
+    }
+    let min;
+    let max;
+    let minValue = Infinity;
+    let maxValue = -Infinity;
+    for (key in map) {
+        if (map[key] > maxValue) {
+            maxValue = map[key];
+            max = key;
+        }
+        if (map[key] < minValue) {
+            minValue = map[key];
+            min = key;
+            console.log(min)
+        }
+    }
+    console.log(map);
+    console.log("Maximum Occured : " + max);
+    console.log("Minimum Occured : " + min);
+</script>
+
+</html>
