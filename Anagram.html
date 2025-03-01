@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Alphabets
+        let input1 = "hello"
+        let input2 = "olhle"
+
+        input1 = input1.toLowerCase().split("").sort().join("");
+        input2 = input2.toLowerCase().split("").sort().join("");
+
+
+        if (input1 == input2) {
+            console.log("True")
+        } else {
+            console.log("False")
+        }
+
+
+        //Numbers
+        let num1 = 1234
+        let num2 = 4321
+
+        num1 = num1.toString().split("").sort().join("");
+        num2 = num2.toString().split("").sort().join("");
+
+
+        if (num1 == num2) {
+            console.log("True")
+        } else {
+            console.log("False")
+        }
+    </script>
+</body>
+
+</html>
