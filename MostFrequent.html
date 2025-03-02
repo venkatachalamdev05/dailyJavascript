@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function mostFrequent(value) {
+            let map = {};
+            for (item of value) {
+                if (map[item]) {
+                    map[item] += 1
+                } else {
+                    map[item] = 1
+                }
+            }
+
+            let mostFreqValue = "";
+            let maxValue = -Infinity;
+            for (item in map) {
+                if (map[item] > maxValue) {
+                    maxValue = map[item];
+                    mostFreqValue = item;
+                }
+            }
+            console.log(mostFreqValue)
+            console.log(map)
+        }
+
+        mostFrequent([1, 2, 3, 2, 4, 2, 5, 6, 7])
+    </script>
+</body>
+
+</html>
