@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // [1,1,2,2,4,5,6,6, 6] -> {1:1, 2: 1, 6: 2}
+        // [2,3,3,3, 6,7,7] -> {3:2, 7:1}
+
+        let input = [2, 3, 3, 3, 6, 7, 7]
+        let count = {};
+        let repeatedCount = {};
+        for (let item of input) {
+            if (count[item]) {
+                count[item] += 1
+            } else {
+                count[item] = 1
+            }
+        }
+
+        for (let item in count) {
+            if (count[item] != 1) {
+                repeatedCount[item] = count[item] - 1
+            }
+        }
+        console.log(repeatedCount)
+    </script>
+</body>
+
+</html>
