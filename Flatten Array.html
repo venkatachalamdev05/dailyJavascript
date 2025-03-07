@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let input = [1, [2, [3, 4]], 5];
+        let output = [];
+
+        //Without Flat
+        function flattenArray(value) {
+            for (item of value) {
+                if (Array.isArray(item)) {
+                    flattenArray(item);
+                } else {
+                    output.push(item)
+                }
+            }
+        }
+        flattenArray(input)
+        console.log(output);
+
+
+
+        //With Flat
+        console.log(input.flat(2))
+
+
+
+
+    </script>
+</body>
+
+</html>
