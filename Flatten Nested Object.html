@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let input = {
+            a: 1,
+            b: {
+                c: 2,
+                d: {
+                    e: 3
+                }
+            }
+        };
+
+        let output = {}
+
+        displayVal(input)
+        function displayVal(value, parentKey = "") {
+            for (item in value) {
+                let newKey = parentKey ? parentKey + "." + item : item;
+                if (typeof value[item] == "object") {
+                    displayVal(value[item], newKey);
+                } else {
+                    output[newKey] = value[item];
+                }
+            }
+        };
+        console.log(output);
+    </script>
+</body>
+
+</html>
