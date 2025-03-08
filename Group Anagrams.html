@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let input = ["eat", "tea", "tan", "ate", "nat", "bat"];
+        let map = {};
+        for (let i = 0; i < input.length; i++) {
+            let sort = input[i].split("").sort().join("")
+            if (map[sort]) {
+                map[sort].push(input[i]);
+            } else {
+                map[sort] = [input[i]];
+            }
+        }
+
+        console.log(Object.values(map));
+        console.log(input)
+
+    </script>
+</body>
+
+</html>
