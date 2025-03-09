@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Without Reduce
+        let input = " is the best language Javascript"
+        input = input.split(" ");
+        let maxCount = -Infinity;
+        let longestWord;
+        for (item of input) {
+            if (item.length > maxCount) {
+                maxCount = item.length;
+                longestWord = item;
+            }
+        }
+
+        console.log(longestWord)
+
+
+        //With Reduce
+        let input2 = " is the best language Javascript"
+        let longestWord2 = input2.split(" ").reduce((longest, word) =>
+            word.length > longest.length ? word : longest
+        );
+        console.log(longestWord2)
+    </script>
+</body>
+
+</html>
