@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let input = [
+            ["A", "@#", "3", "Q", "B", "17"],
+            ["Z", "1", "GO", "3", "A", "@#", "1"],
+            ["T", "@#", "1", "A", "8"],
+            ["100", "150", "@#", "300", "500", "1", "A", "SO"]
+        ]
+        let output = [];
+
+
+        for (let i = 0; i < input[0].length; i++) {
+            let value = input[0][i];
+            let isCommon = input.every(subArray => subArray.includes(value));
+            if (isCommon) {
+                output.push(value);
+            }
+        }
+        console.log([...new Set(output)]);
+        // output: ["A", "@#"]
+    </script>
+</body>
+
+</html>
