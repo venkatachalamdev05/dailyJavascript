@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [2, 3, 1, 2, 4, 3];
+        let target = 3;
+        let poss = arr.length / target;
+
+        let sum = 0;
+        let set = [];
+
+        for (let i = 0; i < poss; i++) {
+            let newArr = arr.splice(0, target)
+
+            let val = newArr.reduce((a, b) => a + b)
+            if (val > sum) {
+                sum = val;
+                set = newArr
+            }
+        }
+
+        console.log(set)
+    </script>
+</body>
+
+</html>
