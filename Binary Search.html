@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function linearSearch(arr, t) {
+            let leftIndex = 0;
+            let rightIndex = arr.length - 1
+
+            while (true) {
+                let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+                if (t === arr[middleIndex]) {
+                    return middleIndex
+                } else if (t > arr[middleIndex]) {
+                    leftIndex = middleIndex + 1
+                } else {
+                    rightIndex = middleIndex - 1
+                }
+            }
+            return -1
+        }
+
+        console.log(linearSearch([5, 2, 10, 23, 45], 5));
+
+
+    </script>
+</body>
+
+</html>
