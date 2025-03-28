@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function bubbleSort(arr) {
+            console.log(arr)
+            let swapped;
+            do {
+                swapped = false
+                for (let i = 0; i < arr.length - 1; i++) {
+                    let temp = 0;
+                    if (arr[i] > arr[i + 1]) {
+                        temp = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped)
+            return arr;
+        }
+
+        console.log(bubbleSort([100, 5, 2, 10, 2, 45, 5, 66, 77, -88, 9, 90]));
+
+
+    </script>
+</body>
+
+</html>
